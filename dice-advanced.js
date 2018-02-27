@@ -44,10 +44,10 @@ let button = new Button({
 
     image1.image = IMAGE_PATH + rand + '.png';
 
-    if (rand == 6) {
-      label.text = userText.text + '- WINNER, you got a 6';
+    if (rand == 5) {
+      label.text = userText.text + '- WINNER, you got a 5';
       numWins = numWins + 1 ;
-      winnerimage.image = IMAGE_PATH + 'Casino - 170.mp4';
+      winnerimage.image = IMAGE_PATH + 'winner233.jpg';
     } else {
       label.text = userText.text  + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
@@ -127,3 +127,5 @@ new Button({
     .then(() => label.text = 'Url has been launched')
     .catch((e) => label.text = e)
 }).appendTo(ui.contentView);
+
+  
