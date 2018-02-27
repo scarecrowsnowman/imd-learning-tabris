@@ -9,7 +9,7 @@ const {
   app, TextInput
 } = require('tabris');
 
-const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
+const IMAGE_PATH = 'https://scarecrowsnowman.github.io/imd-learning-tabris/images/';
 const MY_GITHUB_REPO = 'https://github.com/mrmccormack/imd-learning-tabris'
 
 // global variables
@@ -127,5 +127,3 @@ new Button({
     .then(() => label.text = 'Url has been launched')
     .catch((e) => label.text = e)
 }).appendTo(ui.contentView);
-
-  
