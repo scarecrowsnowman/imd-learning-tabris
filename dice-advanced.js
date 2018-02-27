@@ -54,6 +54,22 @@ let button = new Button({
 
 
       winnerimage.image = IMAGE_PATH + ' ';
+let button3 = new Button({
+  id: 'button3',
+  centerX: 0, top: 'prev() 10',
+  text: '❚❚'
+}).on('select', () => video.state === 'play' ? video.pause() : video.play())
+  .appendTo(ui.contentView);
+
+let video = new Video({
+  left: 100, top: 110, right:100, bottom: '#button3 16', 
+  url: 'https://github.com/scarecrowsnowman/imd-learning-tabris/raw/master/images/120.mp4',
+  controlsVisible: false
+}).on('stateChanged', event => button2.text = event.value !== 'pause' ? '❚❚' : '▶')
+  .appendTo(ui.contentView);
+
+return;
+
     } else {
       label.text = userText.text  + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
@@ -136,18 +152,6 @@ new Button({
  
 
 
- let button3 = new Button({
-  id: 'button3',
-  centerX: 0, bottom: 16,
-  text: '❚❚'
-}).on('select', () => video.state === 'play' ? video.pause() : video.play())
-  .appendTo(ui.contentView);
-
-let video = new Video({
-  left: 0, top: 0, right: 0, bottom: '#button3 16',
-  url: 'http://peach.themazzone.com/durian/movies/sintel-1280-stereo.mp4',
-  controlsVisible: false
-}).on('stateChanged', event => button2.text = event.value !== 'pause' ? '❚❚' : '▶')
-  .appendTo(ui.contentView);
+ 
   
   
