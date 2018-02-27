@@ -2,7 +2,9 @@
 
 const {
   Button,
+  button2,
   TextView,
+  Video,
   ui,
   ImageView,
   AlertDialog,
@@ -47,7 +49,11 @@ let button = new Button({
     if (rand == 5) {
       label.text = userText.text + '- WINNER, you got a 5';
       numWins = numWins + 1 ;
-      winnerimage.image = IMAGE_PATH + 'winner233.jpg';
+      
+
+
+
+      winnerimage.image = IMAGE_PATH + ' ';
     } else {
       label.text = userText.text  + ' - Try again- Wins so far ' + numWins;
       winnerimage.image = '';
@@ -127,3 +133,21 @@ new Button({
     .then(() => label.text = 'Url has been launched')
     .catch((e) => label.text = e)
 }).appendTo(ui.contentView);
+ 
+
+
+ let button3 = new Button({
+  id: 'button3',
+  centerX: 0, bottom: 16,
+  text: '❚❚'
+}).on('select', () => video.state === 'play' ? video.pause() : video.play())
+  .appendTo(ui.contentView);
+
+let video = new Video({
+  left: 0, top: 0, right: 0, bottom: '#button3 16',
+  url: 'http://peach.themazzone.com/durian/movies/sintel-1280-stereo.mp4',
+  controlsVisible: false
+}).on('stateChanged', event => button2.text = event.value !== 'pause' ? '❚❚' : '▶')
+  .appendTo(ui.contentView);
+  
+  
